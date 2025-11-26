@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\About;
 
+use App\Http\Controllers\Controller;
 use App\Models\Page;
 use App\Models\Facility;
-use Illuminate\Http\Request;
 
-class AboutController extends Controller
+class PublicController extends Controller
 {
     public function index()
     {

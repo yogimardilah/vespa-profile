@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Spmb;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SpmbSubmission;
 
-class SpmbController extends Controller
+class PublicController extends Controller
 {
     public function showForm()
     {
