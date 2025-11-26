@@ -19,16 +19,13 @@ Route::get('/', function () {
 })->name('home');
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\News\PublicController as NewsPublicController;
+use App\Http\Controllers\Gallery\PublicController as GalleryPublicController;
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::view('/akademik','akademik')->name('akademik');
-use App\Models\News;
-
-Route::get('/news', function () {
-    $news = News::whereNotNull('published_at')->orderBy('published_at', 'desc')->paginate(10);
-    return view('news', compact('news'));
-})->name('news');
-Route::view('/gallery','gallery')->name('gallery');
+Route::get('/news', [NewsPublicController::class, 'index'])->name('news');
+Route::get('/gallery', [GalleryPublicController::class, 'index'])->name('gallery');
 Route::view('/students','students')->name('students');
 Route::view('/parents','parents')->name('parents');
 use App\Http\Controllers\SpmbController;
