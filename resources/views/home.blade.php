@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 mt-4 mt-md-0">
-                    <img src="/images/hero.jpeg" alt="hero" class="img-fluid rounded">
+                    <img src="/images/hero.svg" alt="hero" class="img-fluid rounded">
                 </div>
             </div>
         </div>

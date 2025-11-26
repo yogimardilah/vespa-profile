@@ -9,39 +9,30 @@
             <p class="text-muted max-width-72ch">Berita dan pengumuman terbaru dari sekolah. Klik judul untuk membaca detail berita.</p>
 
             <div class="list-group mt-3">
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="news-item">
-                        <div class="news-meta">
-                            <div class="badge-date">12 Nov<br><small class="text-muted">2025</small></div>
-                        </div>
-                        <div class="flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-start">
-                                <div>
-                                    <h5 class="mb-1">Lomba Sains Antar Kelas</h5>
-                                    <p class="mb-1 text-muted">Siswa-siswa berkompetisi dalam lomba sains tahunan untuk mengasah kemampuan riset dan presentasi.</p>
+                @forelse($news as $item)
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <div class="news-item">
+                            <div class="news-meta">
+                                <div class="badge-date">{{ $item->published_at?->format('d M') }}<br><small class="text-muted">{{ $item->published_at?->format('Y') }}</small></div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="mb-1">{{ $item->title }}</h5>
+                                        <p class="mb-1 text-muted">{{ $item->excerpt }}</p>
+                                    </div>
+                                    <small class="text-muted">{{ $item->published_at?->format('Y') }}</small>
                                 </div>
-                                <small class="text-muted">Sekolah</small>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                @empty
+                    <div class="list-group-item">Belum ada berita.</div>
+                @endforelse
+            </div>
 
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="news-item">
-                        <div class="news-meta">
-                            <div class="badge-date">05 Okt<br><small class="text-muted">2025</small></div>
-                        </div>
-                        <div class="flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-start">
-                                <div>
-                                    <h5 class="mb-1">Bakti Sosial Sekolah</h5>
-                                    <p class="mb-1 text-muted">Kegiatan bakti sosial melibatkan siswa dan guru dalam program peduli lingkungan dan masyarakat.</p>
-                                </div>
-                                <small class="text-muted">Kegiatan</small>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+            <div class="mt-3">
+                {{ $news->links() }}
             </div>
         </div>
     </section>

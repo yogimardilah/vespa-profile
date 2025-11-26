@@ -294,6 +294,36 @@ Untuk pertanyaan atau masalah:
 
 ---
 
+## 🔐 Admin Panel
+
+Admin panel ringan disediakan untuk mengelola konten seperti berita.
+
+- URL: `/admin`
+- Default credentials (set di file `.env`):
+   - `ADMIN_USER=admin`
+   - `ADMIN_PASS=password`
+
+### Migrations & Setup
+
+1. Jalankan migration untuk membuat tabel berita:
+
+```bash
+php artisan migrate
+```
+
+2. Buka `http://127.0.0.1:8000/admin/login` lalu masuk menggunakan username/password yang diset di `.env`.
+
+3. Jika ingin mengupload gambar melalui admin, jalankan:
+
+```bash
+php artisan storage:link
+```
+
+### Notes
+- Panel admin menggunakan penyimpanan session sederhana (tidak memakai package auth lengkap).
+- Untuk produksi, gantikan mekanisme ini dengan Laravel Auth (Breeze/Jetstream) dan kebijakan keamanan yang sesuai.
+
+
 **Version:** 1.0.0  
 **Last Updated:** November 26, 2025  
 **Framework:** Laravel 11  
