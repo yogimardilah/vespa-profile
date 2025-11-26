@@ -53,3 +53,8 @@ $app->singleton(
 */
 
 return $app;
+
+// Load application helpers (provide global helper functions like `setting()`)
+if (file_exists(__DIR__ . '/../app/Helpers/SettingHelper.php')) {
+    require_once __DIR__ . '/../app/Helpers/SettingHelper.php';
+}

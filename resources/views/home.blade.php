@@ -7,8 +7,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h1 class="display-6 fw-bold">Selamat Datang di SDIT RUSMANI</h1>
-                    <p class="lead text-white">Membangun generasi unggul melalui pendidikan karakter dan akademik. Pelajari program kami dan ikuti kegiatan terbaru.</p>
+                    <h1 class="display-6 fw-bold">Selamat Datang di {{ setting('school_name', 'Sekolah Kami') }}</h1>
+                    <p class="lead text-white">{{ setting('school_description', 'Membangun generasi unggul melalui pendidikan karakter dan akademik. Pelajari program kami dan ikuti kegiatan terbaru.') }}</p>
                     <div class="d-flex gap-2">
                         <a href="{{ route('spmb') }}" class="btn btn-warning">Daftar SPMB</a>
                         <a href="{{ route('news') }}" class="btn btn-outline-light">Berita &amp; Kegiatan</a>

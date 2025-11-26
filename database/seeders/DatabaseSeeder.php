@@ -25,5 +25,11 @@ class DatabaseSeeder extends Seeder
 
         // Seed pages
         $this->call([\Database\Seeders\PageSeeder::class]);
+
+        // Seed settings
+        $this->call([\Database\Seeders\SettingSeeder::class]);
+
+        // Seed facilities
+        $this->call([\Database\Seeders\FacilitySeeder::class]);
     }
 }

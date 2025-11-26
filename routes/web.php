@@ -18,7 +18,9 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::view('/about','about')->name('about');
+use App\Http\Controllers\AboutController;
+
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::view('/akademik','akademik')->name('akademik');
 use App\Models\News;
 

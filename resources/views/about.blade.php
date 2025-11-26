@@ -35,9 +35,9 @@
                             <p class="mt-3 text-muted">SDIT RUSMANI berdiri sejak 1998 dengan tujuan mencetak lulusan berkarakter dan berprestasi. Kami menekankan keseimbangan akademik dan kegiatan karakter.</p>
                             <hr>
                             <ul class="list-unstyled mb-0">
-                                <li><strong>Alamat:</strong> Jl. Gn. Karang No.28, Limusnunggal, Kec. Cibeureum, Kota Sukabumi, Jawa Barat 43165</li>
-                                <li><strong>Telepon:</strong> (0266) 0000-000</li>
-                                <li><strong>Email:</strong> info@sekolah.example</li>
+                                <li><strong>Alamat:</strong> {{ setting('school_address', 'Alamat sekolah belum diatur') }}</li>
+                                <li><strong>Telepon:</strong> {{ setting('school_phone', '(0266) 0000-000') }}</li>
+                                <li><strong>Email:</strong> {{ setting('school_email', 'info@sekolah.example') }}</li>
                             </ul>
                         </div>
                     </div>
@@ -65,22 +65,9 @@
                         <h3 class="section-title">Fasilitas</h3>
                         <p class="section-sub">Fasilitas yang mendukung pembelajaran dan kegiatan siswa.</p>
 
-                        <div class="facility-item">
-                            <div class="facility-icon"><i class="bi bi-flask-fill"></i></div>
-                            <div>Laboratorium IPA</div>
-                        </div>
-                        <div class="facility-item">
-                            <div class="facility-icon"><i class="bi bi-book-fill"></i></div>
-                            <div>Perpustakaan</div>
-                        </div>
-                        <div class="facility-item">
-                            <div class="facility-icon"><i class="bi bi-basketball"></i></div>
-                            <div>Lapangan Olahraga</div>
-                        </div>
-                        <div class="facility-item">
-                            <div class="facility-icon"><i class="bi bi-music-note-beamed"></i></div>
-                            <div>Ruang Ekstrakurikuler</div>
-                        </div>
+                        @foreach($facilities ?? [] as $facility)
+                            <x-facility-item :icon="$facility->icon ?? 'bi bi-circle'" :label="$facility->name" />
+                        @endforeach
                     </div>
                 </div>
             </div>

@@ -33,8 +33,8 @@
                 <div class="col-md-5">
                     <div class="card card-custom p-3 mb-3">
                         <div class="fw-bold">Kantor Sekolah</div>
-                        <div class="text-muted mt-2">Jl. Gn. Karang No.28, Limusnunggal, Kec. Cibeureum, Kota Sukabumi, Jawa Barat 43165</div>
-                        <div class="text-muted mt-1">Telp: (0266) 0000-000 · email: info@sekolah.example</div>
+                        <div class="text-muted mt-2">{{ setting('school_address', 'Alamat sekolah belum diatur') }}</div>
+                        <div class="text-muted mt-1">Telp: {{ setting('school_phone', '(0266) 0000-000') }} · email: {{ setting('school_email', 'info@sekolah.example') }}</div>
                         <div class="text-muted mt-2">Jam: Senin-Jumat 07:30 - 15:30</div>
                     </div>
 
@@ -45,14 +45,19 @@
 
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {
-                            // Initialize map centered on school location (example: Jakarta)
-                            const map = L.map('map').setView([-6.9457120233073635, 106.93933584787159], 15);
+                            // Initialize map centered on school location
+                            const lat = parseFloat('{{ setting("school_lat", "-6.9457120233073635") }}');
+                            const lng = parseFloat('{{ setting("school_lng", "106.93933584787159") }}');
+                            const schoolAddress = '{{ setting("school_address", "Alamat sekolah") }}';
+                            const schoolName = '{{ setting("school_name", "Sekolah") }}';
+                            
+                            const map = L.map('map').setView([lat, lng], 15);
                             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                 attribution: '© OpenStreetMap',
                                 maxZoom: 19
                             }).addTo(map);
-                            L.marker([-6.9457120233073635, 106.93933584787159]).addTo(map)
-                                .bindPopup('SDIT RUSMANI<br>Jl. Gn. Karang No.28, Limusnunggal, Kec. Cibeureum, Kota Sukabumi, Jawa Barat 43165')
+                            L.marker([lat, lng]).addTo(map)
+                                .bindPopup(schoolName + '<br>' + schoolAddress)
                                 .openPopup();
                         });
                     </script>
