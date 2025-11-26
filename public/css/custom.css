@@ -1,0 +1,41 @@
+:root{
+  --primary:#0f4c81;
+  --accent:#ffb703;
+  --muted:#6b7280;
+}
+body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial}
+.hero-custom{background:linear-gradient(180deg,var(--primary),#1b6aa8);color:#fff;border-radius:8px}
+.card-custom{border-radius:8px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+.btn-warning{background:var(--accent);border-color:var(--accent);color:#111827}
+
+/* Responsive tweaks */
+@media (max-width:576px){
+  .navbar-brand div{display:none}
+}
+
+/* Utility */
+.max-width-72ch{max-width:72ch}
+
+.hero-custom{padding-top:3rem;padding-bottom:3rem}
+.card-custom{border-radius:8px;box-shadow:0 6px 18px rgba(16,24,40,0.06);overflow:hidden}
+
+/* Section heading */
+.section-title{font-size:1.5rem;font-weight:700;margin-bottom:0.75rem}
+.section-sub{color:var(--muted);margin-bottom:1.25rem}
+
+/* Profile / icon */
+.icon-circle{width:46px;height:46px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#f1f5f9;color:var(--primary);font-weight:700}
+
+/* News list */
+.news-item{display:flex;gap:12px;align-items:flex-start}
+.news-meta{min-width:96px;text-align:center}
+.badge-date{background:#eef2ff;color:var(--primary);font-weight:600;padding:8px 10px;border-radius:8px;display:inline-block}
+
+/* Map */
+#map{width:100%;height:280px;border-radius:8px;z-index:1}
+.leaflet-container{font-family:inherit}
+
+/* Icons list */
+.facility-item{display:flex;align-items:center;gap:10px;padding:8px 0}
+.facility-icon{width:36px;height:36px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px}
+

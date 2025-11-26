@@ -3,90 +3,170 @@
 @section('title','Beranda')
 
 @section('content')
-    <section class="hero">
+    <section class="hero-custom py-5">
         <div class="container">
-            <div class="grid">
-                <div style="flex:1">
-                    <h1 style="font-size:34px;margin:0 0 12px;font-weight:800">Selamat Datang di Nama Sekolah</h1>
-                    <p style="margin:0 0 18px;max-width:56ch;opacity:0.95">Membangun generasi unggul melalui pendidikan karakter dan akademik. Lihat program kami, kegiatan, dan pengumuman terbaru di bawah.</p>
-                    <div style="display:flex;gap:12px;flex-wrap:wrap">
-                        <a href="#profil" class="btn">Tentang Sekolah</a>
-                        <a href="#berita" style="background:transparent;border:2px solid rgba(255,255,255,0.18);color:white;padding:10px 14px;border-radius:6px">Berita & Kegiatan</a>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-6 fw-bold">Selamat Datang di SDIT RUSMANI</h1>
+                    <p class="lead text-white">Membangun generasi unggul melalui pendidikan karakter dan akademik. Pelajari program kami dan ikuti kegiatan terbaru.</p>
+                    <div class="d-flex gap-2">
+                        <a href="{{ route('spmb') }}" class="btn btn-warning">Daftar SPMB</a>
+                        <a href="{{ route('news') }}" class="btn btn-outline-light">Berita &amp; Kegiatan</a>
                     </div>
                 </div>
-                <div style="width:320px;min-width:220px">
-                    <div class="card" style="background:rgba(255,255,255,0.12);color:white">
-                        <div style="font-weight:700">Informasi Pendaftaran</div>
-                        <div style="margin-top:8px;opacity:0.95">PPDB dibuka mulai 1 Juni. Hubungi kantor untuk informasi lebih lanjut.</div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <img src="/images/hero.jpeg" alt="hero" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-3">Berita Terbaru</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card card-custom">
+                        <img src="/images/news1.jpeg" class="card-img-top rounded-top" alt="berita">
+                        <div class="card-body">
+                            <h5 class="card-title">Lomba Sains Antar Kelas</h5>
+                            <p class="card-text text-muted">Siswa berprestasi dari berbagai kelas mengikuti lomba sains tahunan. Selengkapnya di halaman News.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-custom">
+                        <img src="/images/news2.jpeg" class="card-img-top rounded-top" alt="berita">
+                        <div class="card-body">
+                            <h5 class="card-title">Bakti Sosial Sekolah</h5>
+                            <p class="card-text text-muted">Kegiatan bakti sosial melibatkan siswa dan guru untuk membantu lingkungan sekitar.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="profil" style="padding:36px 0">
+    <section class="py-5 bg-light">
         <div class="container">
-            <h2 style="margin:0 0 10px">Profil Singkat</h2>
-            <p style="color:var(--muted);max-width:70ch">Nama Sekolah adalah lembaga pendidikan yang berfokus pada pengembangan potensi akademik dan karakter siswa. Kami mendorong kolaborasi guru, siswa, dan orang tua untuk mencapai prestasi tinggi.</p>
-            <div class="card-grid" style="margin-top:18px">
-                <div class="card">
-                    <h3 style="margin:0 0 8px">Visi</h3>
-                    <p style="margin:0;color:var(--muted)">Menjadi sekolah unggul yang berbudaya dan berprestasi.</p>
+            <div class="row">
+                <div class="col-12 col-lg-4 mb-3">
+                    <div class="card card-custom h-100 p-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-circle">NS</div>
+                            <div>
+                                <h4 class="mb-0">Profil Singkat</h4>
+                                <div class="text-muted small">Didirikan 1998 · Sekolah Menengah</div>
+                            </div>
+                        </div>
+
+                        <p class="mt-3 text-muted">SDIT RUSMANI berdiri sejak 1998 dengan tujuan mencetak lulusan berkarakter dan berprestasi. Kami menekankan keseimbangan akademik dan kegiatan karakter.</p>
+                        <hr>
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Alamat:</strong> Jl. Gn. Karang No.28, Limusnunggal, Kec. Cibeureum, Kota Sukabumi, Jawa Barat 43165</li>
+                            <li><strong>Telepon:</strong> (0266) 0000-000</li>
+                            <li><strong>Email:</strong> info@sekolah.example</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3 style="margin:0 0 8px">Misi</h3>
-                    <ul style="margin:0;color:var(--muted);padding-left:18px">
-                        <li>Meningkatkan kualitas pembelajaran</li>
-                        <li>Mengembangkan karakter siswa</li>
-                        <li>Mendorong inovasi dan kreativitas</li>
-                    </ul>
+
+                <div class="col-12 col-lg-5 mb-3">
+                    <h2 class="section-title">Visi &amp; Misi</h2>
+                    <p class="section-sub">Visi, misi, dan tujuan pendidikan yang menjadi pedoman kegiatan sekolah.</p>
+
+                    <div class="card mb-3 card-custom p-3">
+                        <h5 class="mb-2">Visi</h5>
+                        <p class="text-muted mb-0">Menjadi institusi pendidikan unggul yang berkarakter dan berprestasi.</p>
+                    </div>
+
+                    <div class="card card-custom p-3">
+                        <h5 class="mb-2">Misi</h5>
+                        <ul class="text-muted mb-0">
+                            <li>Meningkatkan kualitas pembelajaran</li>
+                            <li>Mengembangkan karakter siswa</li>
+                            <li>Mendorong inovasi dan kreativitas</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3 style="margin:0 0 8px">Fasilitas</h3>
-                    <p style="margin:0;color:var(--muted)">Laboratorium, Perpustakaan, Lapangan Olahraga, Ruang Kegiatan Ekstrakurikuler.</p>
+
+                <div class="col-12 col-lg-3 mb-3">
+                    <h3 class="section-title">Fasilitas</h3>
+                    <p class="section-sub">Fasilitas yang mendukung pembelajaran dan kegiatan siswa.</p>
+
+                    <div class="facility-item">
+                        <div class="facility-icon"><i class="bi bi-flask-fill"></i></div>
+                        <div>Laboratorium IPA</div>
+                    </div>
+                    <div class="facility-item">
+                        <div class="facility-icon"><i class="bi bi-book-fill"></i></div>
+                        <div>Perpustakaan</div>
+                    </div>
+                    <div class="facility-item">
+                        <div class="facility-icon"><i class="bi bi-basketball"></i></div>
+                        <div>Lapangan Olahraga</div>
+                    </div>
+                    <div class="facility-item">
+                        <div class="facility-icon"><i class="bi bi-music-note-beamed"></i></div>
+                        <div>Ruang Ekstrakurikuler</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="berita" style="background:#f9fafb;padding:36px 0">
+    <section class="py-5">
         <div class="container">
-            <h2 style="margin:0 0 10px">Berita & Pengumuman</h2>
-            <div class="card-grid">
-                <article class="card">
-                    <div style="font-weight:700">Lomba Sains Antar Kelas</div>
-                    <div style="margin-top:8px;color:var(--muted)">Siswa berprestasi dari berbagai kelas mengikuti lomba sains tahunan.</div>
-                </article>
-                <article class="card">
-                    <div style="font-weight:700">Kegiatan Bakti Sosial</div>
-                    <div style="margin-top:8px;color:var(--muted)">Siswa dan guru melaksanakan bakti sosial di lingkungan sekitar.</div>
-                </article>
-                <article class="card">
-                    <div style="font-weight:700">Pengumuman Libur Semester</div>
-                    <div style="margin-top:8px;color:var(--muted)">Libur semester akan dimulai tanggal 20 Desember.</div>
-                </article>
+            <h2 class="mb-3">Kontak Singkat</h2>
+            <div class="row g-3">
+                <div class="col-md-8">
+                    <div class="card card-custom p-3">
+                        <div class="fw-bold mb-3">Hubungi Kami</div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div><strong>Kantor Sekolah</strong></div>
+                                <div class="text-muted">Jl. Gn. Karang No.28, Limusnunggal, Kec. Cibeureum, Kota Sukabumi, Jawa Barat 43165</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div><strong>Telepon</strong></div>
+                                <div class="text-muted">(0266) 0000-000</div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div><strong>Email</strong></div>
+                                <div class="text-muted">info@sekolah.example</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div><strong>Jam Kerja</strong></div>
+                                <div class="text-muted">Senin-Jumat 07:30 - 15:30</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom p-3">
+                        <div class="fw-bold mb-2">Lokasi</div>
+                        <div id="mapHome" style="height:220px;"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="kontak" style="padding:36px 0">
-        <div class="container">
-            <h2 style="margin:0 0 10px">Kontak</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div style="font-weight:700">Kantor Sekolah</div>
-                    <div style="margin-top:8px;color:var(--muted)">Telp: (021) 0000-000 · email: info@sekolah.example</div>
-                </div>
-                <div class="card">
-                    <div style="font-weight:700">Jam Kerja</div>
-                    <div style="margin-top:8px;color:var(--muted)">Senin - Jumat: 07.30 - 15.30</div>
-                </div>
-                <div class="card">
-                    <div style="font-weight:700">Alamat</div>
-                    <div style="margin-top:8px;color:var(--muted)">Jl. Contoh No.1, Kota</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('mapHome')) {
+                const map = L.map('mapHome').setView([-6.9457120233073635, 106.93933584787159], 15);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap',
+                    maxZoom: 19
+                }).addTo(map);
+                L.marker([-6.9457120233073635, 106.93933584787159]).addTo(map)
+                    .bindPopup('SDIT RUSMANI<br>Jl. Gn. Karang No.28, Limusnunggal, Kec. Cibeureum, Kota Sukabumi, Jawa Barat 43165')
+                    .openPopup();
+            }
+        });
+    </script>
 
 @endsection
