@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Gallery;
+namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
 use App\Models\Gallery;
 
-class PublicController extends Controller
+class GalleryController extends Controller
 {
     public function index()
     {

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\News;
+namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
 use App\Models\News;
 
-class PublicController extends Controller
+class NewsController extends Controller
 {
     public function index()
     {
